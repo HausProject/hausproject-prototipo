@@ -2,86 +2,104 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Haus Project | Arquitetura e Urbanismo</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Haus Project</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
-    body { background: #f8f8f8; color: #333; }
-    header { background: #fff; padding: 20px 5%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
-    nav { display: flex; justify-content: space-between; align-items: center; }
-    nav h1 { font-size: 24px; color: #111; }
-    nav ul { list-style: none; display: flex; gap: 20px; }
-    nav ul li a { text-decoration: none; color: #333; font-weight: 500; }
-    .hero { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 90vh; background: url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=1400&q=80') no-repeat center/cover; color: white; text-align: center; padding: 20px; }
-    .hero h2 { font-size: 42px; margin-bottom: 10px; }
-    .hero p { font-size: 20px; max-width: 600px; }
-    .section { padding: 60px 5%; }
-    .section h3 { font-size: 32px; margin-bottom: 20px; text-align: center; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-    .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
-    .card img { width: 100%; height: 180px; object-fit: cover; border-radius: 4px; margin-bottom: 10px; }
-    footer { background: #111; color: #eee; text-align: center; padding: 40px 20px; }
-    footer a { color: #eee; text-decoration: none; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', sans-serif; }
+    body { background-color: #fdfdfd; color: #111; }
+    header { position: fixed; top: 0; width: 100%; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); z-index: 1000; }
+    header img { height: 40px; }
+    nav ul { list-style: none; display: flex; gap: 30px; }
+    nav ul li a { text-decoration: none; color: #111; font-weight: 500; transition: 0.3s; }
+    nav ul li a:hover { color: #999; }
+    .hero {
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .hero h1 {
+      font-size: 48px;
+      color: white;
+      text-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    .section { padding: 100px 10% 60px; max-width: 1400px; margin: 0 auto; }
+    .section h2 { font-size: 36px; margin-bottom: 20px; text-align: center; }
+    .section p { font-size: 18px; line-height: 1.6; text-align: center; max-width: 800px; margin: 0 auto; }
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-top: 40px;
+    }
+    .project {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+    .project img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .project:hover img {
+      transform: scale(1.05);
+    }
+    footer {
+      background: #111;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    footer a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
   <header>
+    <img src="logo-hausproject.png" alt="Haus Project Logo">
     <nav>
-      <h1>Haus Project</h1>
       <ul>
-        <li><a href="#sobre">Quem Somos</a></li>
-        <li><a href="#portfolio">Portfólio</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#portfolio">Projetos</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
     </nav>
   </header>
 
   <section class="hero">
-    <h2>Projetos de Arquitetura que Contam Histórias</h2>
-    <p>Soluções arquitetônicas inteligentes, elegantes e personalizadas para transformar o espaço em experiência.</p>
+    <h1>Arquitetura que constrói experiências</h1>
   </section>
 
   <section class="section" id="sobre">
-    <h3>Quem Somos</h3>
-    <p style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 18px;">
-      Somos um escritório de arquitetura que acredita na fusão entre estética, funcionalidade e contexto. Atuamos com projetos residenciais, comerciais e urbanísticos com foco em soluções sob medida e excelência técnica.
-    </p>
+    <h2>Sobre</h2>
+    <p>Somos um estúdio de arquitetura que transforma ideias em espaços únicos, combinando estética contemporânea, técnica e essência artesanal.</p>
   </section>
 
   <section class="section" id="portfolio">
-    <h3>Projetos em Destaque</h3>
-    <div class="grid">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Projeto 1">
-        <h4>Residência Linear</h4>
-        <p>Casa térrea com foco em integração visual com a natureza e uso de materiais naturais.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1613545325264-3a362ec5df68?auto=format&fit=crop&w=800&q=80" alt="Projeto 2">
-        <h4>Comercial Contemporâneo</h4>
-        <p>Edifício comercial com identidade visual marcante e soluções sustentáveis.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80" alt="Projeto 3">
-        <h4>Residência Urbana</h4>
-        <p>Projeto compacto e funcional para área urbana com aproveitamento máximo da luz natural.</p>
-      </div>
+    <h2>Projetos</h2>
+    <div class="portfolio">
+      <div class="project"><img src="https://images.unsplash.com/photo-1613545325264-3a362ec5df68?auto=format&fit=crop&w=800&q=80" alt="Projeto 1"></div>
+      <div class="project"><img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=800&q=80" alt="Projeto 2"></div>
+      <div class="project"><img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80" alt="Projeto 3"></div>
     </div>
   </section>
 
   <section class="section" id="contato">
-    <h3>Fale Conosco</h3>
-    <p style="text-align: center; font-size: 18px;">Entre em contato pelo WhatsApp ou Instagram para solicitar um orçamento.</p>
-    <p style="text-align: center; margin-top: 20px;">
-      <a href="https://wa.me/5511999999999" target="_blank">📱 WhatsApp</a> | 
-      <a href="https://instagram.com/haus.project" target="_blank">📸 Instagram</a> | 
-      <a href="mailto:contato@hausproject.com.br">✉️ E-mail</a>
-    </p>
+    <h2>Contato</h2>
+    <p>Entre em contato pelo <a href="https://wa.me/5511999999999" target="_blank">WhatsApp</a>, <a href="https://instagram.com/haus.project" target="_blank">Instagram</a> ou envie um <a href="mailto:contato@hausproject.com.br">e-mail</a>.</p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Haus Project Arquitetura e Urbanismo. Todos os direitos reservados.</p>
+    <p>&copy; 2025 Haus Project. Todos os direitos reservados.</p>
   </footer>
 </body>
 </html>
